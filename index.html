@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fff0f5">
+<title>For Bangaru ♡ | Happy 19th</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
+</head>
+<body>
+<div id="pandaIntro" class="panda-intro" role="dialog" aria-label="Panda love check">
+  <div class="panda-card">
+    <div class="panda-sparkles" aria-hidden="true">✦ ♡ ✧ ♡ ✦</div>
+    <div class="panda-mascot" aria-hidden="true">
+      <span class="panda-ear panda-ear-left"></span><span class="panda-ear panda-ear-right"></span>
+      <span class="panda-head"><span class="panda-eye-patch panda-eye-left"><i></i></span><span class="panda-eye-patch panda-eye-right"><i></i></span><span class="panda-nose"></span><span class="panda-mouth"></span><span class="panda-cheek panda-cheek-left"></span><span class="panda-cheek panda-cheek-right"></span></span>
+      <span class="panda-body"></span><span class="panda-paw panda-paw-left">♡</span><span class="panda-paw panda-paw-right">♡</span>
+    </div>
+    <p class="panda-intro-message">A tiny panda has a question for you, Bangaru ♡</p>
+    <form id="pandaAnswerForm" class="panda-answer-form">
+      <label for="pandaAnswer">Type this little secret to continue:</label>
+      <input id="pandaAnswer" name="pandaAnswer" type="text" placeholder="i lv my brother" autocomplete="off" spellcheck="false" required>
+      <button id="pandaAnswerBtn" type="submit">Send my answer 💗</button>
+    </form>
+    <p class="panda-kiss-count" id="pandaKissCount" aria-live="polite">Type “i lv my brother” to receive 3 kisses ❤️</p>
+    <div class="panda-kiss-trail" id="pandaKissTrail" aria-hidden="true"></div>
+  </div>
+</div>
+<div id="balloonGame" class="balloon-game" role="dialog" aria-modal="true" aria-labelledby="balloonTitle" hidden>
+  <div class="balloon-game-card">
+    <p class="eyebrow">ONE TINY GAME BEFORE THE SURPRISE</p>
+    <h2 id="balloonTitle">Pop 3 balloons, Bangaru! 🎈</h2>
+    <p class="balloon-game-intro">Tap each balloon to reveal the secret behind it 😂</p>
+    <div class="balloon-stage" id="balloonStage">
+      <div class="balloon-item">
+        <div class="balloon-reveal" id="reveal0" aria-live="polite">🐒</div>
+        <button class="balloon balloon-one" type="button" data-balloon="0" aria-label="Pop the first balloon"><span>1</span></button>
+        <span class="balloon-string" aria-hidden="true"></span>
+      </div>
+      <div class="balloon-item">
+        <div class="balloon-reveal" id="reveal1" aria-live="polite">Aunty 😁</div>
+        <button class="balloon balloon-two" type="button" data-balloon="1" aria-label="Pop the second balloon"><span>2</span></button>
+        <span class="balloon-string" aria-hidden="true"></span>
+      </div>
+      <div class="balloon-item">
+        <div class="balloon-reveal" id="reveal2" aria-live="polite">Thika amikond mundhe nadi 😂🤣</div>
+        <button class="balloon balloon-three" type="button" data-balloon="2" aria-label="Pop the third balloon"><span>3</span></button>
+        <span class="balloon-string" aria-hidden="true"></span>
+      </div>
+    </div>
+    <p id="balloonStatus" class="balloon-status" aria-live="polite">0 of 3 balloons popped</p>
+    <button id="balloonContinue" class="primary-btn" type="button" hidden>Okay, show my surprise 💗</button>
+  </div>
+</div>
+<div id="idiotGame" class="idiot-game" role="dialog" aria-modal="true" aria-labelledby="idiotTitle" hidden>
+  <div class="idiot-card">
+    <div class="anime-girl" aria-hidden="true">
+      <span class="anime-sparkle sparkle-a">✦</span><span class="anime-sparkle sparkle-b">♡</span>
+      <div class="anime-hair"><div class="anime-face"><span class="anime-eye eye-a">♥</span><span class="anime-eye eye-b">♥</span><span class="anime-blush blush-a"></span><span class="anime-blush blush-b"></span><span class="anime-mouth">⌣</span></div></div>
+      <div class="anime-body"></div>
+    </div>
+    <p class="eyebrow">ONE LAST VERY IMPORTANT QUESTION</p>
+    <h2 id="idiotTitle">You are an idiot?? 😭😂</h2>
+    <p class="idiot-subtitle">Choose wisely, Bangaru… this cute girl is watching you! 💗</p>
+    <div class="idiot-actions" id="idiotActions">
+      <button id="idiotYes" class="idiot-yes" type="button">YES 😂</button>
+      <button id="idiotNo" class="idiot-no" type="button">NO 😌</button>
+    </div>
+    <p id="idiotLaugh" class="idiot-laugh" aria-live="polite">Psst… try clicking NO 🤭</p>
+  </div>
+</div>
+<div id="hearts" aria-hidden="true"></div><canvas id="confetti" aria-hidden="true"></canvas>
+<header class="topbar"><span class="brand">for my bangaru ♡</span><button class="music-btn" id="musicBtn" type="button" aria-pressed="false">♫ <span id="musicLabel">Play our song</span></button></header>
+<audio id="birthdayMusic" src="music/birthday-song.mp3" loop preload="auto" autoplay></audio>
+<main id="deck">
+<section class="slide hero active" id="welcome" aria-label="Welcome" aria-hidden="false"><div class="hero-copy"><p class="eyebrow">✧ A little surprise, made with love ✧</p><h1>For my <em>Bangaru</em> ♡</h1><p>Some people make the world brighter just by being in it. This little place is all yours, my little sister.</p><button class="primary-btn" id="beginBtn">Open your surprise ✨</button><p class="tiny">From your brother, with all my love</p></div><div class="photo-frame"><div class="photo-placeholder" aria-hidden="true">♡</div><img data-photo="bangaru.jpg" alt="Bangaru's portrait" hidden><span class="frame-caption">my forever little star ✧</span></div></section>
+<section class="slide center-slide" id="birthday" aria-label="Birthday reveal" aria-hidden="true" inert><div class="content narrow"><p class="eyebrow">TODAY IS ALL ABOUT YOU</p><div class="stars">✧ ♡ ✦ ♡ ✧</div><h2>Happy <em>19th</em> Birthday,<br>Bangaru!</h2><p>Nineteen new chapters of wonder. May this year bring you kindness, courage, beautiful adventures, and countless reasons to smile.</p><button class="primary-btn" id="celebrateBtn">Celebrate with me 🎉</button></div></section>
+<section class="slide memory-slide" id="memories" aria-label="Our memories" aria-hidden="true" inert><div class="content"><p class="eyebrow">LITTLE MOMENTS, BIG LOVE</p><h2>Our little world ♡</h2><p>Some memories deserve a place time can never take away.</p><div class="memory-grid"><article class="polaroid"><div class="photo-placeholder">♡<small>Childhood memory</small></div><img data-photo="memory1.jpg" alt="Our childhood memory" hidden><p>my forever little one ✿</p></article><article class="polaroid"><div class="photo-placeholder">♡<small>Our favorite laugh</small></div><img data-photo="memory2.jpg" alt="Our happy memory" hidden><p>the laughs I'll remember ♡</p></article><article class="polaroid"><div class="photo-placeholder">♡<small>Our favorite moment</small></div><img data-photo="memory3.jpg" alt="Our favorite moment together" hidden><p>more memories to come ✧</p></article></div></div></section>
+<section class="slide center-slide" id="cake" aria-label="Make a wish" aria-hidden="true" inert><div class="content narrow"><p class="eyebrow">A LITTLE BIRTHDAY MAGIC</p><h2>Make a wish, Bangaru ♡</h2><p>Close your eyes, think of something beautiful, and tap the cake.</p><button id="cakeBtn" class="cake" type="button" aria-label="Blow out birthday candles"><span class="candles"><i></i><i></i><i></i></span><span class="icing"></span><span class="tier upper">♡</span><span class="tier lower"></span><span class="plate"></span></button><p id="cakeMessage" aria-live="polite">Tap the cake to make your wish ✨</p></div></section>
+<section class="slide letter-slide" id="letter" aria-label="Letter from your brother" aria-hidden="true" inert><article class="letter content narrow"><p class="eyebrow">A LETTER FROM YOUR BROTHER</p><h2>Dear Bangaru, ♡</h2><div class="letter-text"><p>Happy 19th birthday, my little sister.</p><p>I wish you could see yourself through my eyes, even for a moment. You would see someone precious, capable, and worthy of every beautiful thing life has to offer.</p><p>As you grow older, there will be exciting days and difficult ones. You don't have to have everything figured out. You can make mistakes, start again, and become whoever you dream of being.</p><p>Even when we're busy with our own lives, I hope you never doubt this: your happiness matters to me. I'll always be cheering for you, celebrating your wins, and wishing you peace when life feels heavy.</p><p>May nineteen bring you gentle friendships, brave dreams, silly laughter, and memories that make you smile years later.</p><p>No matter how old you get, you'll always be my little Bangaru. Happy birthday. I'm proud to be your brother.</p><p class="signature">With all my love,<br>Your brother ♡</p></div></article></section>
+<section class="slide center-slide finale" id="finale" aria-label="Final birthday wish" aria-hidden="true" inert><div class="content narrow"><div class="stars">✦ ✧ ♡ ✧ ✦</div><p class="eyebrow">ONE LAST THING</p><h2>The world is lucky<br>to have <em>you</em> in it.</h2><p>Keep smiling, keep dreaming, and keep being beautifully you.</p><button id="finalBtn" class="primary-btn">A million hearts for you 💗</button><p class="signature">Happy 19th, my Bangaru. Always loved.</p></div></section>
+</main>
+<nav class="navigation" aria-label="Slide navigation"><button id="backBtn" type="button">← Back</button><div id="dots" class="dots"></div><span id="counter" aria-live="polite">1 / 6</span><button id="nextBtn" type="button">Next →</button></nav>
+<dialog id="photoLock" class="lock-dialog"><form id="unlockForm"><p class="eyebrow">JUST FOR BANGARU</p><h2>Unlock our memories ♡</h2><p>Enter the secret passphrase to decrypt the photos on your device.</p><label for="secret">Secret passphrase</label><input id="secret" type="password" autocomplete="off" required><p id="unlockStatus" role="status" aria-live="polite"></p><button class="primary-btn" type="submit">Unlock photos 🔐</button><button class="plain-btn" id="skipUnlock" type="button">Continue without photos</button></form></dialog>
+</body></html>
