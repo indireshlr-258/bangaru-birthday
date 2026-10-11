@@ -1,0 +1,7 @@
+encrypt-photos.html
+images/
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
