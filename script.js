@@ -128,6 +128,12 @@ form.addEventListener('submit',async e=>{e.preventDefault();const btn=form.query
 $('#skipUnlock').onclick=()=>dialog.close();addEventListener('pagehide',()=>{photoUrls.forEach(URL.revokeObjectURL);photoUrls=[]});
 // Opening panda greeting: require the secret phrase, then send exactly three red-heart kisses.
 const pandaIntro=$('#pandaIntro');
+// Start the birthday song on the first touch of the panda screen.
+pandaIntro.addEventListener('pointerdown', () => {
+  if (audio.paused) {
+    startBirthdayMusic();
+  }
+}, { once: true });
 const pandaAnswerForm=$('#pandaAnswerForm');
 const pandaAnswer=$('#pandaAnswer');
 const pandaAnswerBtn=$('#pandaAnswerBtn');
